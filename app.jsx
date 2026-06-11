@@ -13,7 +13,7 @@ const DRINKS = [
   original: "After the Negroni",
   price: "42 PLN",
   notes: "Lyre's zero-proof gin, a note of wormwood, blood orange, cinchona bitters.",
-  img: U("1551751299-1b51cab2694c")
+  img: U("1514361892635-6b07e31e75f9")
 },
 {
   cat: "classics",
@@ -38,7 +38,7 @@ const DRINKS = [
   original: "Polish Botanical",
   price: "36 PLN",
   notes: "Tart sea buckthorn cordial, sparkling spring water, a light rosemary smoke finish.",
-  img: U("1556679343-c7306c1976bc")
+  img: U("1560512823-829485b8bf24")
 },
 {
   cat: "botanical",
@@ -46,7 +46,7 @@ const DRINKS = [
   original: "Polish Botanical",
   price: "34 PLN",
   notes: "Elderflower cordial, pine-needle infusion, white grape, dry tonic.",
-  img: U("1587223962930-cb7f31384c19")
+  img: U("1546171753-97d7676e4602")
 },
 {
   cat: "botanical",
@@ -71,7 +71,7 @@ const DRINKS = [
   original: "Adaptogenic Booster",
   price: "38 PLN",
   notes: "Double espresso, Lion's Mane extract for focus, vanilla bean, oat foam, cocoa dust.",
-  img: U("1485808191679-5f86510681a2")
+  img: U("1610632380989-680fe40816c6")
 },
 {
   cat: "boosters",
@@ -173,7 +173,7 @@ function Hero({ variant, tagline }) {
       <div className="shell hero-content">
         <div className="hero-copy">
           <span className="eyebrow">Powiśle, Warsaw · Est. 2026 · Fully Alcohol-Free</span>
-          <h1 className="display" style={{ fontSize: "100.6px", fontWeight: "300" }}>
+          <h1 className="display" style={{ fontSize: "clamp(52px, 7vw, 110px)", fontWeight: "300" }}>
             Spirits, <em>reimagined.</em><br />
             The night, lucid.
           </h1>
@@ -194,7 +194,7 @@ function Hero({ variant, tagline }) {
         <div className="hero-visual">
             <div className="hero-photo">
               <img
-                src={U("1551024709-8f23befc6f87", 1200)}
+                src={U("1551751299-1b51cab2694c", 1200)}
                 alt="Signature mocktail at Lumina"
                 loading="eager"
               />
@@ -350,13 +350,13 @@ function Experience() {
     n: "III",
     title: "Snacks, not a Menu",
     body: "Polish craft cheeses, rosemary olives, spiced nuts, and crudités with beet hummus or mint yogurt dip. A focused larder that lets the drinks lead.",
-    img: U("1541529086526-db283c563270")
+    img: U("1505575967455-40e256f73376")
   },
   {
     n: "IV",
     title: "Drive Home, Clearly",
     body: "Every guest leaves the way they arrived — sharp, present, ready for tomorrow morning.",
-    img: U("1514933651103-005eec06c04b")
+    img: U("1493514789931-586cb221d7a7")
   }];
 
   return (
@@ -397,7 +397,7 @@ function Events() {
         <div className="events-grid">
           <div className="events-visual">
             <img
-              src={U("1517457373958-b7bdd4587205", 1000)}
+              src={U("1414235077428-338989a2e8c0", 1000)}
               alt="Private dining at Lumina"
               loading="lazy"
             />

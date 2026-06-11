@@ -1,10 +1,11 @@
 /* ---------- Lumina Dry Lounge ---------- */
 
 :root {
+  color-scheme: dark;
   /* Default palette: Midnight + Amber */
-  --bg: #0b0e14;
-  --bg-elev: #11151d;
-  --bg-soft: #161b25;
+  --bg: #141927;
+  --bg-elev: #1b2132;
+  --bg-soft: #232b3f;
   --ink: #f4ede0;
   --ink-dim: rgba(244, 237, 224, 0.72);
   --ink-mute: rgba(244, 237, 224, 0.48);
@@ -32,6 +33,15 @@ html, body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   overflow-x: hidden;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 88px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
 }
 
 img { max-width: 100%; display: block; }
@@ -115,14 +125,14 @@ section {
   align-items: center;
   justify-content: space-between;
   padding: 22px 48px;
-  background: linear-gradient(180deg, rgba(11,14,20,0.85) 0%, rgba(11,14,20,0) 100%);
+  background: linear-gradient(180deg, rgba(20,25,39,0.85) 0%, rgba(20,25,39,0) 100%);
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
   transition: background 0.3s ease;
 }
 
 .nav.scrolled {
-  background: rgba(11,14,20,0.92);
+  background: rgba(20,25,39,0.92);
   border-bottom: 1px solid var(--hair);
 }
 
@@ -161,6 +171,19 @@ section {
 }
 
 .nav-links a:hover { color: var(--ink); }
+
+.nav-links a::after {
+  content: "";
+  position: absolute;
+  left: 0; right: 0; bottom: 0;
+  height: 1px;
+  background: var(--accent);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s cubic-bezier(0.2, 0.6, 0.2, 1);
+}
+
+.nav-links a:hover::after { transform: scaleX(1); }
 
 .nav-cta {
   font-family: var(--mono);
@@ -380,8 +403,8 @@ section {
   inset: 0;
   z-index: 2;
   background:
-    radial-gradient(ellipse at 30% 30%, transparent 30%, rgba(11,14,20,0.5) 100%),
-    linear-gradient(180deg, transparent 60%, rgba(11,14,20,0.6) 100%);
+    radial-gradient(ellipse at 30% 30%, transparent 30%, rgba(20,25,39,0.5) 100%),
+    linear-gradient(180deg, transparent 60%, rgba(20,25,39,0.6) 100%);
   pointer-events: none;
 }
 
@@ -803,6 +826,20 @@ section {
 
 .drink-card:hover { background: var(--bg-elev); }
 
+.drink-card::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 1px;
+  background: var(--accent);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.5s cubic-bezier(0.2, 0.6, 0.2, 1);
+  z-index: 1;
+}
+
+.drink-card:hover::before { transform: scaleX(1); }
+
 .drink-card .index {
   font-family: var(--mono);
   font-size: 10px;
@@ -838,7 +875,7 @@ section {
   content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(180deg, transparent 50%, rgba(11,14,20,0.45) 100%);
+  background: linear-gradient(180deg, transparent 50%, rgba(20,25,39,0.45) 100%);
   pointer-events: none;
 }
 
@@ -965,7 +1002,7 @@ section {
   content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(180deg, transparent 40%, rgba(11,14,20,0.55) 100%);
+  background: linear-gradient(180deg, transparent 40%, rgba(20,25,39,0.55) 100%);
   pointer-events: none;
 }
 
@@ -1010,7 +1047,7 @@ section {
   content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(180deg, rgba(11,14,20,0.1) 0%, rgba(11,14,20,0.6) 100%);
+  background: linear-gradient(180deg, rgba(20,25,39,0.1) 0%, rgba(20,25,39,0.6) 100%);
   pointer-events: none;
 }
 
@@ -1065,6 +1102,16 @@ section {
   grid-template-columns: auto 1fr auto;
   gap: 24px;
   align-items: baseline;
+}
+
+.events-list .ev-name {
+  transition: color 0.25s, transform 0.25s;
+  display: inline-block;
+}
+
+.events-list li:hover .ev-name {
+  color: var(--accent);
+  transform: translateX(6px);
 }
 
 .events-list .ev-num {
@@ -1357,9 +1404,9 @@ section {
 /* ---------- Color palette variants ---------- */
 
 [data-palette="forest"] {
-  --bg: #0d1410;
-  --bg-elev: #131c17;
-  --bg-soft: #1a241f;
+  --bg: #16211b;
+  --bg-elev: #1d2922;
+  --bg-soft: #25332b;
   --ink: #f1eadb;
   --ink-dim: rgba(241, 234, 219, 0.72);
   --ink-mute: rgba(241, 234, 219, 0.48);
@@ -1370,9 +1417,9 @@ section {
 }
 
 [data-palette="plum"] {
-  --bg: #14101a;
-  --bg-elev: #1c1624;
-  --bg-soft: #251c2e;
+  --bg: #1d1825;
+  --bg-elev: #261f30;
+  --bg-soft: #30263c;
   --ink: #f6ecea;
   --ink-dim: rgba(246, 236, 234, 0.72);
   --ink-mute: rgba(246, 236, 234, 0.48);
@@ -1383,6 +1430,7 @@ section {
 }
 
 [data-palette="ivory"] {
+  color-scheme: light;
   --bg: #f4ede0;
   --bg-elev: #ebe2d2;
   --bg-soft: #e2d8c4;
